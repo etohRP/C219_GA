@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Library Web App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-BxY2jFhdf7mV6Ed8kzTTl4/z1uEnbvmvBfEK7eyqUbpJi09lVLNUq5o5Zt5qgI0fW0ghsd25FdUbAfiI8fIYYw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullpage.js/dist/fullpage.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6.3.1/dist/tippy.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullpage.js/dist/fullpage.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img class="logo" src="images/logo.png" alt="Library Logo" height="100">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#section1"><i class="fa fa-home"></i> Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#section2"><i class="fa fa-bar-chart"></i> Statistics</a></li>
+                <li class="nav-item"><a class="nav-link" href="#section3"><i class="fa fa-book"></i> Inventory</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="fullpage">
+
+
+        <div class="section" id="book-display">
+            <div class="container mt-4">
+                <form class="form-inline ml-3">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                        id="search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i
+                            class="fa fa-search"></i></button>
+                    <select id="genreFilter" class="form-control mr-sm-2">
+                        <option value="">All Genres</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Novel">Novel</option>
+                        <option value="Thriller">Thriller</option>
+                        <option value="Supernatural">Supernatural</option>
+                        <option value="Action">Action</option>
+                    </select>
+                </form> <br>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="card" data-genre="Romance" data-title="A Sign Of Affection" data-author="Suu Morishita" data-description="The life of Yuki, a college student with deafness as her disability, is going to turn upside down when the young Itsuomi crosses her path, a boy who, despite speaking several languages, He doesn't know Japanese Sign Language. Itsuomi is immediately interested in Yuki and wants to learn sign language and, above all, enter her world. Signs of Affection is a love story about the need for communication, about learning differences, and about empathy.">
+                            <img src="images/signofaffection.jpg" class="card-img-top reserve-trigger" alt="Book Cover" height="350" width="300">
+                            <div class="card-body">
+                                <h5 class="card-title">A Sign Of Affection</h5>
+                                <p class="card-text">Suu Morishita</p>
+                                <button class="btn btn-primary reserve-btn custom-reserve-btn reserve-trigger" data-reserved="false">Reserve</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="card" data-genre="Novel" data-title="The Garden Of Words" data-author="Makoto Shinkai" data-description="When a lonely teenager decides to miss his morning lessons in favour of sitting in a lovely garden, he meets a mysterious older woman who shares his feelings of alienation.">
+                            <img src="images/gardenofwords.jpg" class="card-img-top reserve-trigger" alt="Book Cover" height="350"
+                                width="300">
+                            <div class="card-body">
+                                <h5 class="card-title">The Garden Of Words</h5>
+                                <p class="card-text">Makoto Shinkai</p>
+                                <button
+                                    class="btn btn-primary reserve-btn custom-reserve-btn reserve-trigger">Reserve</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="card" data-genre="Novel" data-title="All The Light We Cannot See" data-author="Anthony Doerr" data-description="All the Light We Cannot See follows the lives of two teenagers during the height of World War II: Marie-Laure, a blind French girl and Werner Pfennig, a German boy forced to join and fight for the Nazi regime.">
+                            <img src="images/allthelightwecannotsee.jpg" class="card-img-top reserve-trigger" alt="Book Cover"
+                                height="350" width="300">
+                            <div class="card-body">
+                                <h5 class="card-title">All The Light We Cannot See</h5>
+                                <p class="card-text">Anthony Doerr</p>
+                                <button class="btn btn-primary reserve-btn custom-reserve-btn reserve-trigger">Reserve</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="card" data-genre="Thriller" data-title="Tokyo Ghoul" data-author="Makoto Shinkai" data-description="Set in a world where humans live in constant fear of ghouls - superpowered humanoid beings who feed on human flesh to survive, a shy college student named Kaneki Ken, who is nearly killed in an attack by one of these monsters, becomes a half-ghoul himself after receiving an organ transplant from the ghoul.">
+                            <img src="images/tokyoghoul.jpg" class="card-img-top reserve-trigger" alt="Book Cover" height="350"
+                                width="300">
+                            <div class="card-body">
+                                <h5 class="card-title">Tokyo Ghoul</h5>
+                                <p class="card-text">Sui Ishida</p>
+                                <button class="btn btn-primary reserve-btn custom-reserve-btn reserve-trigger">Reserve</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="card" data-genre="Supernatural" data-title="Jujutsu Kaisen" data-author="Gege Akutami" data-description="The story revolves around Yuji Itadori, a high school student with exceptional physical abilities. After the death of his grandfather, Yuji finds himself drawn into the world of Jujutsu Sorcery when he comes into contact with a cursed object—a rotting finger imbued with an ancient curse.">
+                            <img src="images/jjk.jpg" class="card-img-top reserve-trigger" alt="Book Cover" height="350" width="300">
+                            <div class="card-body">
+                                <h5 class="card-title">Jujutsu Kaisen</h5>
+                                <p class="card-text">Gege Akutami</p>
+                                <button class="btn btn-primary reserve-btn custom-reserve-btn reserve-trigger">Reserve</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="card" data-genre="Action" data-title="Omniscient Reader's Viewpoint" data-author="Sing Shong" data-description="An ordinary businessman whose favorite comic has just come to life; as he grapples with his newfound reality, he tries to figure out how this happened in the first place. When the world is faced with destruction, only one man knows how it ends—because he is the Omniscient Reader.">
+                            <img src="images/orv.png" class="card-img-top reserve-trigger" alt="Book Cover" height="350" width="300">
+                            <div class="card-body">
+                                <h5 class="card-title">Omniscient Reader's Viewpoint</h5>
+                                <p class="card-text">Sing Shong</p>
+                                <button class="btn btn-primary reserve-btn custom-reserve-btn reserve-trigger">Reserve</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="card" data-genre="Supernatural" data-title="Unholy Blood" data-author="Lina Lim" data-description="When vampires destroy her chance to have the normal life she's always wanted, Hayan Park is forced to draw on her darkest secret to rid the world of the merciless hunters that took it over 10 years ago.">
+                            <img src="images/unholyblood.jpg" class="card-img-top reserve-trigger" alt="Book Cover" height="350"
+                                width="300">
+                            <div class="card-body">
+                                <h5 class="card-title">Unholy Blood</h5>
+                                <p class="card-text">Lina Lim</p>
+                                <button class="btn btn-primary reserve-btn custom-reserve-btn reserve-trigger">Reserve</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="card" data-genre="Novel" data-title="I Had That Same Dream Again" data-author="Yoru Sumino" data-description="An unhappy girl who engages in self-harm, a woman ostracized by society, and an old woman looking to live out her twilight years in peace—what could three such different people have in common? That’s what grade schooler Koyanagi Nanoka is trying to find out. Assigned by her teacher to define what “happiness” means to her, Nanoka sets out to get to know these three strangers—and through them, perhaps, to know herself too.">
+                            <img src="images/hadthatsamedream.jpg" class="card-img-top reserve-trigger" alt="Book Cover" height="350"
+                                width="300">
+                            <div class="card-body">
+                                <h5 class="card-title" id="hadthatdream">I Had That Same Dream Again</h5>
+                                <p class="card-text" id="yoru">Yoru Sumino</p>
+                                <button class="btn btn-primary reserve-btn custom-reserve-btn reserve-trigger">Reserve</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <div class="section" id="library-stats">
+            <div class="container mt-4">
+                <h2>Library Stats</h2>
+                <canvas id="library-chart" width="500" height="200"></canvas>
+            </div>
+        </div>
+
+
+        <div class="section" id="library-inventory">
+            <div class="container mt-4">
+                <h2>Library Inventory</h2>
+                <table id="library-table" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Genre</th>
+                            <th>Year</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A Sign Of Affection</td>
+                            <td>Suu Morishita</td>
+                            <td>Romance</td>
+                            <td>2019</td>
+                            <td>Hardcover</td>
+                        </tr>
+                        <tr>
+                            <td>The Garden Of Words</td>
+                            <td>Makoto Shinkai</td>
+                            <td>Romance</td>
+                            <td>2014</td>
+                            <td>Paperback</td>
+                        </tr>
+                        <tr>
+                            <td>All The Light We Cannot See</td>
+                            <td>Anthony Doerr</td>
+                            <td>Novel</td>
+                            <td>2014</td>
+                            <td>Paperback</td>
+                        </tr>
+                        <tr>
+                            <td>Tokyo Ghoul</td>
+                            <td>Makoto Shinkai</td>
+                            <td>Thriller</td>
+                            <td>2011</td>
+                            <td>Hardcover</td>
+                        </tr>
+                        <tr>
+                            <td>Jujutsu Kaisen</td>
+                            <td>Gege Akutami</td>
+                            <td>Supernatural</td>
+                            <td>2018</td>
+                            <td>Paperback</td>
+                        </tr>
+                        <tr>
+                            <td>Omniscient Reader's Viewpoint</td>
+                            <td>Sing Shong</td>
+                            <td>Action</td>
+                            <td>2014</td>
+                            <td>eBook</td>
+                        </tr>
+                        <tr>
+                            <td>Unholy Blood</td>
+                            <td>Lina Kim</td>
+                            <td>Supernatural</td>
+                            <td>2020</td>
+                            <td>eBook</td>
+                        </tr>
+                        <tr>
+                            <td>I Had that Same Dream Again</td>
+                            <td>Yoru Sumino</td>
+                            <td>Novel</td>
+                            <td>2020</td>
+                            <td>Paperback</td>
+                        </tr>
+                        <tr>
+                            <td>Atomic Habits</td>
+                            <td>James Clear</td>
+                            <td>Novel</td>
+                            <td>2018</td>
+                            <td>Hardcover</td>
+                        </tr>
+                        <tr>
+                            <td>Before The Coffee Gets Cold</td>
+                            <td>Toshikazu Kawaguchi</td>
+                            <td>Novel</td>
+                            <td>2020</td>
+                            <td>Hardcover</td>
+                        </tr>
+                        <tr>
+                            <td>Chainsaw Man</td>
+                            <td>Tatsuki Fujimoto</td>
+                            <td>Thriller</td>
+                            <td>2018</td>
+                            <td>Paperback</td>
+                        </tr>
+                        <tr>
+                            <td>Berserk</td>
+                            <td>Kentaro Miura</td>
+                            <td>Fantasy</td>
+                            <td>1990</td>
+                            <td>Paperback</td>
+                        </tr>
+                        <tr>
+                            <td>Vagabond</td>
+                            <td>Takehiko Inoue</td>
+                            <td>Fiction</td>
+                            <td>1998</td>
+                            <td>Paperback</td>
+                        </tr>
+                        <tr>
+                            <td>I Will Forget This Feeling Someday</td>
+                            <td>Yoru Sumino</td>
+                            <td>Novel</td>
+                            <td>2020</td>
+                            <td>Paperback</td>
+                        </tr>
+                        <tr>
+                            <td>Naruto</td>
+                            <td>Masashi Kishimoto</td>
+                            <td>Fantasy</td>
+                            <td>1999</td>
+                            <td>Paperback</td>
+                        </tr>
+                        <tr>
+                            <td>Bungo Stray Dogs</td>
+                            <td>Kafka Asagiri</td>
+                            <td>Action</td>
+                            <td>2012</td>
+                            <td>Paperback</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="footer mt-5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>&copy; 2024 School Library Web App. All Rights Reserved.</p>
+                            </div>
+                            <div class="col-md-6 text-md-right">
+                                <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal" id="bookModal" tabindex="-1" role="dialog" aria-labelledby="bookModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bookModalTitle"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Author: <span id="bookModalAuthor"></span></p>
+                    <p id="bookModalDescription">Description: <span id="bookModalDescriptionText"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

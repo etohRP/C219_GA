@@ -1,0 +1,119 @@
+#book-display {
+    background-color:#faf7f5;
+}
+
+.card {
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+#library-stats {
+    background-color: #faf7f5;
+}
+
+#library-inventory {
+    background-color: #95857a;
+    position: relative;
+}
+#library-table th {
+    background-color: #7c6f65;
+    color: #ffffff;
+}
+
+.footer {
+    background-color: rgb(112, 91, 73);
+    color: #fff;
+    padding: 50px 0;
+}
+
+.footer a {
+    color: #fff;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+
+.modal-dialog {
+    max-width: 800px;
+}
+
+.modal-content {
+    padding: 20px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar{
+    z-index:1;
+    background: rgb(112, 91, 73) !important; 
+}
+
+.navbar-collapse {
+    display: flex;
+    justify-content: center;
+}
+
+.form-inline {
+    display: flex;
+    justify-content: center;
+}
+
+.form-inline {
+    margin-top: 20px;
+}
+
+.logo {
+    height: 120px;
+    position: absolute;
+    top: -5px; 
+    left: 30px;
+    z-index: 1 ; 
+}
+
+.custom-reserve-btn {
+    background-color: #968375; 
+    border-color: #968375; 
+}
+
+.custom-reserve-btn:hover {
+    background-color: #7a6b60; 
+    border-color: #7a6b60; 
+}
+
+.btn-outline-success.my-2.my-sm-0 {
+    color: #fff; 
+    background-color: #968375; 
+    border-color: #968375;
+}
+
+
+.btn-outline-success.my-2.my-sm-0:hover {
+    color: #968375; 
+    background-color: #fff; 
+    border-color: #968375; 
+}
+
+#genreFilter {
+    margin-left: 10px; 
+}
+
+.ui-autocomplete {
+    background-color: #fff; 
+    border: 1px solid #ccc; 
+    max-height: 200px; 
+    overflow-y: auto; 
+    width: 200px;
+}
+
+.ui-menu-item {
+    padding: 8px; 
+    cursor: pointer;
+}
